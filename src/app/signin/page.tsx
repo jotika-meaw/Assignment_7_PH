@@ -67,7 +67,8 @@ export default function SignInPage() {
   const handleSocialLogin = async (provider: 'google' | 'github') => {
     setIsLoading(true);
     try {
-      await authClient.signIn.social({ provider, callbackURL: '/' });
+      const callbackUrl = new URLSearchParams(window.location.search).get('callbackUrl');
+      await authClient.signIn.social({ provider, callbackURL: callbackUrl ? decodeURIComponent(callbackUrl) : '/' });
     } catch {
       toast.error('সোশ্যাল লগইন ব্যর্থ হয়েছে');
     } finally {
