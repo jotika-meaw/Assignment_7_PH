@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
+import Image from 'next/image';
 import { authClient, signOut as authSignOut } from '@/lib/auth-client';
 import type { Category } from '@/types';
 
@@ -15,6 +16,7 @@ interface NavbarProps {
 
 export function Navbar({ categories }: NavbarProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const { data: session } = authClient.useSession();
   const user = session?.user;
   const [showDropdown, setShowDropdown] = useState(false);
@@ -23,9 +25,11 @@ export function Navbar({ categories }: NavbarProps) {
   const handleSignOut = async () => {
     try {
       await authSignOut();
-      window.location.href = '/';
+      router.push('/');
+      router.refresh();
     } catch {
-      window.location.href = '/';
+      router.push('/');
+      router.refresh();
     }
   };
 
@@ -53,7 +57,7 @@ export function Navbar({ categories }: NavbarProps) {
                   className="flex items-center gap-1.5 pr-3"
                 >
                   {user.image ? (
-                    <img src={user.image} alt="" className="h-6 w-6 rounded-full" />
+                    <Image src={user.image} alt="" width={24} height={24} className="h-6 w-6 rounded-full" />
                   ) : (
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 text-primary-700 text-body-sm font-medium">
                       {user.name?.charAt(0).toUpperCase() || 'U'}

@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import { Navbar, Footer } from '@/components/layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+import Image from 'next/image';
 import { getInitials } from '@/lib/utils';
 import { authClient } from '@/lib/auth-client';
 
@@ -54,7 +55,7 @@ export default function ProfilePage() {
               <div className="flex flex-col items-center gap-6 sm:flex-row">
                 <div className="flex-shrink-0">
                   {user.image ? (
-                    <img src={user.image} alt={user.name} className="h-24 w-24 rounded-full object-cover" />
+                    <Image src={user.image} alt={user.name} width={96} height={96} className="h-24 w-24 rounded-full object-cover" />
                   ) : (
                     <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary-100 text-3xl font-bold text-primary-700">
                       {getInitials(user.name)}

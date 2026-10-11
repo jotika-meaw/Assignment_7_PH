@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 
 interface HeroProps {
@@ -47,11 +48,13 @@ export function Hero({ imageUrl = '/bazar-hero.png' }: HeroProps) {
           {/* Right Image */}
           <div className="flex-1 flex justify-center lg:justify-end hidden lg:block">
             <div className="relative max-w-md">
-              <img
+              <Image
                 src={imageUrl}
                 alt="বাজার দর - তাজা পণ্য ও দাম"
+                width={400}
+                height={300}
                 className="w-full h-auto rounded-2xl shadow-xl border border-neutral-200"
-                loading="eager"
+                priority
               />
               {/* Decorative elements */}
               <div className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-neutral-200 animate-fade-in">
@@ -77,11 +80,13 @@ export function Hero({ imageUrl = '/bazar-hero.png' }: HeroProps) {
 
           {/* Mobile Image */}
           <div className="lg:hidden order-first">
-            <img
+            <Image
               src={imageUrl}
               alt="বাজার দর - তাজা পণ্য ও দাম"
+              width={300}
+              height={225}
               className="w-full max-w-md mx-auto rounded-2xl shadow-lg border border-neutral-200"
-              loading="eager"
+              priority
             />
           </div>
         </div>

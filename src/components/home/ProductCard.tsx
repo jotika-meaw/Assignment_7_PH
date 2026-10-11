@@ -10,11 +10,10 @@ import type { Product } from '@/types';
 
 interface ProductCardProps {
   product: Product;
-  priority?: boolean;
   skeleton?: boolean;
 }
 
-export function ProductCard({ product, priority = false, skeleton = false }: ProductCardProps) {
+export function ProductCard({ product, skeleton = false }: ProductCardProps) {
   if (skeleton) {
     return <SkeletonCard />;
   }
@@ -26,16 +25,7 @@ export function ProductCard({ product, priority = false, skeleton = false }: Pro
       <Card variant="hover" padding="none">
         {/* Product Image/Emoji */}
         <div className="aspect-square bg-neutral-50 flex items-center justify-center overflow-hidden relative">
-          {product.image ? (
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-              loading={priority ? 'eager' : 'lazy'}
-            />
-          ) : (
-            <span className="text-5xl lg:text-6xl" aria-hidden="true">{product.emoji || '📦'}</span>
-          )}
+          <span className="text-5xl lg:text-6xl" aria-hidden="true">{product.emoji || '📦'}</span>
           
           {/* Change Badge Overlay */}
           <div className="absolute top-2 right-2">
@@ -162,7 +152,7 @@ export function ProductGrid({
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {products.map((product, index) => (
-          <ProductCard key={`${product.id}-${index}`} product={product} priority={index < 4} />
+          <ProductCard key={`${product.id}-${index}`} product={product} />
         ))}
       </div>
     </section>
