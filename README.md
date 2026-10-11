@@ -118,8 +118,10 @@ Create `.env.local` with:
 
 ```env
 # API Configuration
-NEXT_PUBLIC_API_URL_1=https://api.api-store.workers.dev/api/bazardor
-NEXT_PUBLIC_API_URL_2=https://api.abcz.workers.dev/api/bazardor
+NEXT_PUBLIC_API_BASE_URL=https://api.api-store.workers.dev/api/bazardor
+NEXT_PUBLIC_API_FALLBACK_BASE_URL=https://api.abcz.workers.dev/api/bazardor
+# Optional: Request timeout in milliseconds (default: 8000)
+# NEXT_PUBLIC_API_TIMEOUT_MS=8000
 
 # MongoDB Atlas
 MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/bazardor?retryWrites=true&w=majority
@@ -298,8 +300,8 @@ All environment variables must be added in **Vercel Dashboard → Project → Se
 | `GOOGLE_CLIENT_SECRET` | Google OAuth Client Secret | `GOCSPX-...` |
 | `GITHUB_CLIENT_ID` | GitHub OAuth Client ID | `Ov23li...` |
 | `GITHUB_CLIENT_SECRET` | GitHub OAuth Client Secret | `github_pat_...` |
-| `NEXT_PUBLIC_API_URL_1` | Primary API endpoint | `https://api.api-store.workers.dev/api/bazardor` |
-| `NEXT_PUBLIC_API_URL_2` | Fallback API endpoint | `https://api.abcz.workers.dev/api/bazardor` |
+| `NEXT_PUBLIC_API_BASE_URL` | Primary API endpoint | `https://api.api-store.workers.dev/api/bazardor` |
+| `NEXT_PUBLIC_API_FALLBACK_BASE_URL` | Fallback API endpoint | `https://api.abcz.workers.dev/api/bazardor` |
 
 ---
 
