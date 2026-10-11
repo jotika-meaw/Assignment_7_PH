@@ -16,10 +16,10 @@ export function Hero({ imageUrl = '/bazar-hero.png' }: HeroProps) {
     }
   };
 
-  return (
-    <section className="relative bg-gradient-to-b from-primary-50 via-white to-white py-12 lg:py-20" aria-labelledby="hero-heading">
+return (
+    <section className="relative bg-gradient-to-b from-primary-50 via-white to-white py-14 lg:py-24" aria-labelledby="hero-heading">
       <div className="container-main">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left max-w-2xl">
             <p className="text-body-sm font-medium text-primary-600 mb-3" aria-hidden="true">
@@ -29,7 +29,7 @@ export function Hero({ imageUrl = '/bazar-hero.png' }: HeroProps) {
               প্রতিদিনের বাজার দাম<br />
               <span className="text-primary-600">এক নজরে জানুন</span>
             </h1>
-<p className="text-body-lg text-neutral-600 mb-6 max-w-lg mx-auto lg:mx-0">
+            <p className="text-body-lg text-neutral-600 mb-7 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               বাংলাদেশের সব বাজারের আজকের পণ্যের দাম, দামের পরিবর্তন এবং ট্রেন্ডসহ এক জায়গায়। স্মার্ট কেনাকাটা করুন।
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
@@ -40,30 +40,33 @@ export function Hero({ imageUrl = '/bazar-hero.png' }: HeroProps) {
           </div>
 
           {/* Right Image */}
-          <div className="flex-1 flex justify-center lg:justify-end hidden lg:block">
-            <div className="relative max-w-md">
-              <Image
-                src={imageUrl}
-                alt="বাজার দর - তাজা পণ্য ও দাম"
-                width={400}
-                height={300}
-                className="w-full h-auto rounded-2xl shadow-xl border border-neutral-200"
-                priority
-              />
-              
+          <div className="flex-1 flex justify-center hidden lg:block">
+            <div className="relative w-full max-w-lg">
+              <div className="aspect-[4/3] bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-neutral-100 overflow-hidden">
+                <Image
+                  src={imageUrl}
+                  alt="বাজার দর - তাজা পণ্য ও দাম"
+                  width={480}
+                  height={360}
+                  className="w-full h-full object-contain p-4"
+                  priority
+                />
+              </div>
             </div>
           </div>
 
           {/* Mobile Image */}
-          <div className="lg:hidden order-first">
-            <Image
-              src={imageUrl}
-              alt="বাজার দর - তাজা পণ্য ও দাম"
-              width={300}
-              height={225}
-              className="w-full max-w-md mx-auto rounded-2xl shadow-lg border border-neutral-200"
-              priority
-            />
+          <div className="lg:hidden order-first w-full max-w-md mx-auto">
+            <div className="aspect-[4/3] bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-neutral-100 overflow-hidden">
+              <Image
+                src={imageUrl}
+                alt="বাজার দর - তাজা পণ্য ও দাম"
+                width={360}
+                height={270}
+                className="w-full h-full object-contain p-4"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
