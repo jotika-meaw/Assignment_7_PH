@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 
@@ -37,11 +36,6 @@ export function Hero({ imageUrl = '/bazar-hero.png' }: HeroProps) {
               <Button size="lg" onClick={scrollToProducts} className="w-full sm:w-auto">
                 সব পণ্য দেখুন
               </Button>
-              <Link href="/category/all" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg">
-                  ক্যাটাগরি ব্রাউজ করুন
-                </Button>
-              </Link>
             </div>
           </div>
 
