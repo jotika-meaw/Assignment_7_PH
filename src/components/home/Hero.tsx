@@ -23,14 +23,14 @@ export function Hero({ imageUrl = '/bazar-hero.png' }: HeroProps) {
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left max-w-2xl">
             <p className="text-body-sm font-medium text-primary-600 mb-3" aria-hidden="true">
-              আজকের বাজার দাম
+              আজকের বাজারের দাম
             </p>
             <h1 id="hero-heading" className="text-display-sm lg:display-md font-bold text-neutral-900 mb-4 leading-tight">
               প্রতিদিনের বাজার দাম<br />
               <span className="text-primary-600">এক নজরে জানুন</span>
             </h1>
-            <p className="text-body-lg text-neutral-600 mb-6 max-w-lg mx-auto lg:mx-0">
-              বাংলাদেশের সব বাজারের আজকের পণ্যের দাম, দামের পরিবর্তন এবং টрен্ড এক জায়গায়। স্মার্ট কেনাকাটা করুন।
+<p className="text-body-lg text-neutral-600 mb-6 max-w-lg mx-auto lg:mx-0">
+              বাংলাদেশের সব বাজারের আজকের পণ্যের দাম, দামের পরিবর্তন এবং ট্রেন্ডসহ এক জায়গায়। স্মার্ট কেনাকাটা করুন।
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
               <Button size="lg" onClick={scrollToProducts} className="w-full sm:w-auto">
